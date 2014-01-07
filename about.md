@@ -6,9 +6,9 @@ group: navigation
 ---
 {% include JB/setup %}
 
-#### Blog QR Code:
+>#### Blog QR Code:
 
-![Blog QR Code](/assets/images/url.png "Blog QR Code")
+>![Blog QR Code](/assets/images/url.png "Blog QR Code")
 
 #### ChangeLog
 
@@ -18,5 +18,7 @@ group: navigation
 
 NULL
 
-<hr>
+*********
+
 {% include JB/comments %}
+
