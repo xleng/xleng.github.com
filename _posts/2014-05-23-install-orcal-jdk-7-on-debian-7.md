@@ -49,7 +49,7 @@ Java HotSpot(TM) Server VM (build 24.55-b03, mixed mode)
 
 ```
 
-如果版本是所需要的，到这里就结束了，如果版本仍热是其他版本：
+如果版本仍热是其他版本：
 
 ```bash
 john@localhost:~$ java -version
@@ -75,3 +75,9 @@ There are 3 choices for the alternative java (providing /usr/bin/java).
 ```
 
 从上面运行结果可以看出，默认的Java版本是openjdk 7，我们输入Oracle Java相应序号\(此处为``3``\)，再执行``java -version``，Java已经切换到Oracle版本。javac及javaws也可以通过相同方式进行配置。
+
+最后在``/etc/profile``导出``JAVA_HOME``：
+
+```bash
+export JAVA_HOME=/usr/lib/jvm/jdk1.7.0
+```
