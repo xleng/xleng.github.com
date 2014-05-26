@@ -76,8 +76,8 @@ There are 3 choices for the alternative java (providing /usr/bin/java).
 
 从上面运行结果可以看出，默认的Java版本是openjdk 7，我们输入Oracle Java相应序号\(此处为``3``\)，再执行``java -version``，Java已经切换到Oracle版本。javac及javaws也可以通过相同方式进行配置。
 
-最后在``/etc/profile``导出``JAVA_HOME``：
+最后配置``JAVA_HOME``：
 
 ```bash
-export JAVA_HOME=/usr/lib/jvm/jdk1.7.0
+sudo sh -c 'echo "export JAVA_HOME=/usr/lib/jvm/jdk1.7.0/" >> /etc/profile.d/java.sh'
 ```
