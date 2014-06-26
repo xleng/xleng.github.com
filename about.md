@@ -6,13 +6,10 @@ group: navigation
 ---
 {% include JB/setup %}
 
->#### Blog QR Code:
-
->![Blog QR Code](/assets/images/url.png "Blog QR Code")
 
 #### ChangeLog
 
-- 2013年12月，clone Havee's Blog
+- 2013年12月，clone [Havee](http://havee.me)'s Blog
 
 #### About me
 
@@ -20,5 +17,4 @@ NULL
 
 *********
 
-{% include JB/comments %}
-
+{% include custom/comments %}

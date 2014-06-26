@@ -1,5 +1,17 @@
 /* This is for your Custom Content. */
 
+@mixin sans-serif {
+  font-family: "Ubuntu", "Helvetica Neue", Tahoma, Arial, Helvetica, sans-serif;
+}
+
+@mixin serif {
+  font-family: "Cambo", serif;
+}
+
+@mixin monospace {
+  font-family: "PT Mono", "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+}
+
 @mixin transition($a: 0.3s) {
   transition: all $a;
 }
@@ -9,35 +21,30 @@
 }
 
 @mixin box-shadow($a, $b, $c, $d) {
-  box-shadow: $a $b $c rgba(0, 0, 0, $d);
+  box-shadow: $a $b $c rgba(50, 118, 177, $d);
 }
 
 @mixin border($a) {
-  border: 1px solid rgba(0, 0, 0, $a);
+  border: 1px solid rgba(50, 118, 177, $a);
 }
 
 @mixin border-radius($a) {
   border-radius: $a;
 }
 
-@mixin background-color($a: 0.5) {
-  background-color: rgba(249, 249, 249, $a);
+@mixin background-color($a: 249, $b: 0.5) {
+  background-color: rgba($a, $a, $a, $b);
 }
 
 @mixin img {
   max-width: 100%;
-  max-height: 200px;
   margin: 0px auto;
-  display: block;
+  /*display: block;*/
   border-radius: 6px;
   padding: 4px;
   line-height: 1.429;
-  background: #FFF;
-  border: 1px solid #DDD;
-  @include box-shadow(1px, 2px, 3px, 0.6);
+  @include background-color;
+  @include border(0.2);
+  @include box-shadow(1px, 2px, 4px, 0.8);
   @include transition;
-  &:hover {
-    @include box-shadow(1px, 2px, 4px, 0.8);
-    @include transition;
-  }
 }

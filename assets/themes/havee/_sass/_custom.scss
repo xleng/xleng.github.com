@@ -1,11 +1,16 @@
 /* This is for your Custom Content. */
 
 body {
-  font-family: Tahoma, Arial, Helvetica, sans-serif;
+  color: rgba(51, 51, 51, 0.9);
+  background: url("../images/bg.png") repeat scroll left top transparent;
+  @include sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 ,b, strong {
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 ,b, strong {
   @include text-shadow(255, 2px, 170);
+  font-weight: 500;
+  /*@include sans-serif;*/
+  font-family: "Helvetica Neue", 'Ubuntu', Tahoma, Arial, Helvetica, SimHei, sans-serif;
   small {
     @include text-shadow;
   }
@@ -17,11 +22,10 @@ h5, h6, strong {
 
 a {
   @include transition;
-  color: rgb(0, 136, 204);
+  color: rgba(0, 136, 204, 0.9);
   &:hover, &:focus {
     color: rgb(0, 85, 128);
     text-decoration: none;
-    @include text-shadow(255, 1px, 170);
     @include transition;
   }
 }
@@ -36,19 +40,63 @@ a {
   }
 }
 
+body > nav.navbar-default {
+  @include background-color(249, 0.8);
+  @include box-shadow(0px, 0px, 4px, 0.6);
+}
+
 .nav > li > form {
   position: relative;
   display: block;
   padding: 10px 15px;
+  input {
+    @include background-color(255, 0.5);
+  }
 }
 
 .container > .navbar-header, .container > .navbar-collapse {
+  @include text-shadow(255, 2px, 170);
+  @include transition;
   margin-right: 0px;
   margin-left: 0px;
+  @include serif;
+  font-weight: 500;
+}
+
+.container > .navbar-header > a {
+  font-size: 30px;
+}
+
+.container > .navbar-collapse {
+  font-size: 16px;
 }
 
 .page-header {
-    border-bottom: 1px dashed rgb(238, 238, 238);
+  border-bottom: 1px dashed rgba(50, 118, 177, 0.067);
+  .bottom {
+    padding: 4px 0 0;
+    vertical-align: middle;
+	color: rgba(169, 169, 169, 1);
+    p {
+      display: inline;
+      margin: 0 4px;
+    }
+    a {
+      color: rgba(169, 169, 169, 1);
+      &:hover, &:focus {
+        color: rgb(51, 51, 51);
+      }
+      p {
+        display: inline;
+        margin: 0 4px;
+      }
+      span {
+        margin-left: 2px;
+        vertical-align: super;
+        font-size: 0.8em;
+      }
+    }
+  }
 }
 
 .tag_box a span {
@@ -56,41 +104,56 @@ a {
   font-size: 0.8em;
 }
 
+.tag_box a {
+  padding: 3px;
+  margin: 2px;
+  line-height: 180%;
+  border-radius: 3px;
+  @include background-color(238, 0.9);
+}
+
 .row .visible-lg {
   margin-top:40px;
 }
 
-.col-md-9 {
+article {
   .wrapper {
     @include transition;
-    @include border(0.067);
+    @include border(0.167);
     @include border-radius(10px);
-    @include box-shadow(1px, 2px, 4px, 0.067);
-    padding: 5px;
-    margin: 5px 0px;
+    @include box-shadow(0px, 0px, 4px, 0.267);
+    padding:10px;
+    margin: 10px 0px;
     .entry-title {
-      border-bottom: 1px dashed rgba(0, 0, 0, 0.067);
-    }
-    &:hover {
-      @include transition;
-      @include background-color;
-      @include border(0.167);
-      @include box-shadow(2px, 3px, 4px, 0.167);
+      border-bottom: 1px dashed rgba(50, 118, 177, 0.067);
     }
     p img {
       @include img;
     }
     .status {
-      border-top: 1px dashed rgba(0, 0, 0, 0.067);
+      border-top: 1px dashed rgba(50, 118, 177, 0.067);
       padding-top: 10px;
-      color: rgb(119, 119, 119);
-      .date {
+      color: rgba(169, 169, 169, 1);
+      .meta {
         padding: 4px 0 0;
         vertical-align: middle;
+        p {
+          display: inline;
+          margin: 0 4px;
+        }
         a {
-          color: rgb(119, 119, 119);
+          color: rgba(169, 169, 169, 1);
           &:hover, &:focus {
             color: rgb(51, 51, 51);
+          }
+          p {
+            display: inline;
+            margin: 0 4px;
+          }
+          span {
+            margin-left: 2px;
+            vertical-align: super;
+            font-size: 0.8em;
           }
         }
       }
@@ -104,46 +167,53 @@ a {
       margin-top: 0px;
     }
   }
-  p {
+  p, ol, ul, table {
     img {
       @include img;
     }
     code {
-      @include box-shadow(1px, 1px, 1px, 0.067);
+      @include monospace;
+      @include box-shadow(0px, 0px, 1px, 0.167);
       @include border(0.067);
     }
   }
   .highlight pre {
     @include transition;
-    @include background-color;
-    &:hover {
-      @include transition;
-      @include background-color(0.9);
-      @include border(0.35);
-      @include box-shadow(1px, 2px, 2px, 0.167);
+    @include background-color(249, 0.3);
+    @include border(0.35);
+    @include box-shadow(0px, 0px, 3px, 0.267);
+    code {
+      @include monospace;
+    }
+  }
+  .cc {
+    padding:0px 0px 10px 0px;
+    img {
+      position: absolute;
+      left: 50%;
+      margin-top: -25px;
+      margin-left: -44px;
+      @include box-shadow(0px, 0px, 4px, 0.8);
     }
   }
 }
 
 section {
   @include transition;
-  @include border(0.067);
+  @include border(0.167);
   @include border-radius(5px);
-  @include box-shadow(1px, 2px, 3px, 0.067);
+  @include box-shadow(0px, 0px, 4px, 0.267);
+  @include background-color;
   padding: 0px 5px;
   margin: 5px 0px;
   h4 {
-    border-bottom: 1px dashed rgba(0, 0, 0, 0.067);
-  }
-  &:hover {
-    @include transition;
-    @include background-color;
-    @include border(0.167);
-    @include box-shadow(1px, 3px, 4px, 0.167);
+    @include serif;
+    border-bottom: 1px dashed rgba(50, 118, 177, 0.067);
   }
 }
 
 blockquote {
+  border-left: 5px solid rgb(200, 200, 200);
   p {
     font-style: oblique;
   }
@@ -158,7 +228,7 @@ table {
   &:hover {
     @include transition;
     @include border(0.35);
-    @include box-shadow(1px, 2px, 2px, 0.167);
+    @include box-shadow(0px, 0px, 3px, 0.267);
   }
   thead tr th {
     @include border(0.167);
@@ -169,18 +239,18 @@ table {
   }
   tbody tr td {
     @include border(0.167);
-    vertical-align: top;
+    vertical-align: middle;
     padding: 8px;
   }
   thead > tr {
-    @include background-color(0.9);
+    @include background-color(249, 0.9);
   }
   tbody > tr:nth-child(2n+1) {
     @include background-color;
   }
   tbody tr {
     &:hover {
-      @include background-color(0.9);
+      @include background-color(235, 0.7);
       @include transition;
     }
   }
@@ -203,24 +273,6 @@ footer {
 #search-loader {
  display:none;
  text-align:center
-}
-
-#back-top {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  a {
-    width: 54px;
-    height: 54px;
-    display: block;
-    background: #ddd url(../images/bg_up_arrow.png) no-repeat center center;
-    background-color: #aaa;
-    @include border-radius(7px);
-    @include transition(1s);
-    &:hover {
-    background-color: #777;
-    }
-  }
 }
 
 /* baidu share style fixed */
