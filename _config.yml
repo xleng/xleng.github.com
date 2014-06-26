@@ -140,7 +140,7 @@ JB :
   # Set 'provider' to false to turn sharing off globally.
   #
   sharing :
-    provider : false          # 参考 _includes/JB/sharing
+    provider : baidu          # 参考 _includes/JB/sharing
 
   # Settings for all other include helpers can be defined by creating 
   # a hash with key named for the given helper. ex:
