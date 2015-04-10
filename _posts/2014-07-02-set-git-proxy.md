@@ -34,8 +34,8 @@ $ sudo apt-get install socat
 $ sudo vi /usr/bin/gitproxy
 #!/bin/bash
 
-PROXY=squid.vpsee.com
-PROXYPORT=3128
+PROXY=172.16.3.13
+PROXYPORT=8088
 PROXYAUTH=username:password
 exec socat STDIO PROXY:$PROXY:$1:$2,proxyport=$PROXYPORT,proxyauth=$PROXYAUTH
 
