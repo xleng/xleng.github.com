@@ -28,6 +28,7 @@ john@localhost:~$ tar xzvf jdk-7u55-linux-i586.tar.gz
 ```bash
 john@localhost:~$ sudo mkdir -p /usr/lib/jvm
 john@localhost:~$ sudo mv jdk1.7.0_55 /usr/lib/jvm/jdk1.7.0
+john@localhost:~$ sudo chown -R root:root /usr/lib/jvm/jdk1.7.0
 ```
 
 ####Step 3:
